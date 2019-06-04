@@ -2,11 +2,11 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Aula 10 Exemplo 01</title>
+    <title>Aula 10 Exemplo 02</title>
 </head>
 <body>
     
-    <h1>Aula 10 Exemplo 01</h1>
+    <h1>Aula 10 Exemplo 02</h1>
     <ul> </ul>
     <script>
         var itens = [  
@@ -18,11 +18,12 @@
         ];
 
         var lista = document.querySelector("ul");
+        atualizaLista();
 
         function atualizaLista(){
             lista.innerHTML = "";
             for (var i = 0; i < itens.length; i++) {
-                var nLi = document.createElement("Li");
+                var nLi = document.createElement("li");
                 nLi.textContent = itens[i].name;
                 lista.appendChild(nLi);
                 nLi.addEventListener("click", criaOuvinte(i));
@@ -30,10 +31,8 @@
             }
         }
 
-        
         function criaOuvinte(n){
-                return function(e)
-            {
+                return function(e){
                     console.log(e);
                     console.log("i: ", n);
                     itens.splice(n,1);

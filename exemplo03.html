@@ -2,34 +2,39 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Aula 10 Exemplo 01</title>
+    <title>Aula 10 Exemplo 03</title>
 </head>
 <body>
     
-    <h1>Aula 10 Exemplo 01</h1>
+    <h1>Aula 10 Exemplo 03</h1>
     <ul> </ul>
     <script>
         var itens = [  
-            { name: "Item 1" },
-            { name: "Item 2" },
-            { name: "Item 5" },
-            { name: "Item 7" },
-            { name: "Item 9" }
+            { name: "Item 1 " },
+            { name: "Item 2 " },
+            { name: "Item 5 " },
+            { name: "Item 7 " },
+            { name: "Item 9 " }
         ];
 
         var lista = document.querySelector("ul");
+        atualizaLista();
+
+
 
         function atualizaLista(){
             lista.innerHTML = "";
             for (var i = 0; i < itens.length; i++) {
-                var nLi = document.createElement("Li");
-                nLi.textContent = itens[i].name;
+                var nLi = document.createElement("li");
+                var sName = document.createElement("span");
+                sName.textContent = itens[i].name;
+                var bDelete = document.createElement("button");
+                bDelete.textContent = "X";
+                nLi.appendChild(sName);
+                nLi.appendChild(bDelete);
                 lista.appendChild(nLi);
                 nLi.addEventListener("click", criaOuvinte(i));
-
             }
-
-
         }
 
         
