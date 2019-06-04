@@ -33,8 +33,9 @@
             {
                     console.log(e);
                     console.log("i: ", n);
+                    itens.splice(n,1);
                     console.log("Item clicado!",
-                        evento.srcElement.textContent);
+                    evento.srcElement.textContent);
                     lista.removeChild(evento.srcElement);
             }
         }
