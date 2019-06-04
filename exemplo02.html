@@ -23,17 +23,21 @@
             var nLi = document.createElement("Li");
             nLi.textContent = itens[i].name;
             lista.appendChild(nLi);
-            nLi.addEventListener("click",itemClick)
+            nLi.addEventListener("click", criaOuvinte(i));
+            
         }
-
-        function itemClick(e)
+        
+        function criaOuvinte(n)
         {
-            console.log("Item clickado!", e.srcElement.textContent);
-            lista.removeChild(e.srcElement);
-            console.log(e);
+                return function(e)
+            {
+                    console.log(e);
+                    console.log("i: ", n);
+                    console.log("Item clicado!",
+                        evento.srcElement.textContent);
+                    lista.removeChild(evento.srcElement);
+            }
         }
-    
-    
     </script>
 
 </body>
